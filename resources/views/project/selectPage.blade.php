@@ -2,6 +2,7 @@
 @section('title', 'Select how to procced')
 @section('content')
  
+<div class="container-fluid">
  <header class="page-header">
         <div class="container-select">
             <div class="header-content">
@@ -183,6 +184,9 @@
             </button>
         </div>
     </main>
+
+</div>
+
 @endsection   
 
 @section('script')

@@ -18,29 +18,18 @@
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-body {
-    background-color: #f9fafb;
-    color: var(--text-color);
-    line-height: 1.5;
-    padding: 2rem;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-        }
-
 
 /**************************************/
 /***** Create Project Page Start *****/
 /************************************/
-.container {
+.container-form {
     max-width: 1200px;
     width: 100%;
     background-color: white;
     border-radius: 8px;
     box-shadow: var(--shadow-md);
     overflow: hidden;
-        }
+}
 
 .form-header {
     background-color: var(--primary-color);
@@ -177,7 +166,7 @@ body {
     padding: 1rem;
 }
             
-.container {
+.container-form {
     border-radius: 6px;
 }
             
@@ -371,37 +360,25 @@ body {
         }
 
         .template-image {
-            background-image: url("/api/placeholder/800/600");
+            background-image: url("https://img.freepik.com/free-psd/let-s-go-hiking-landing-page-screen_23-2148511267.jpg?ga=GA1.1.1643490475.1742809442&semt=ais_hybrid&w=740");
             position: relative;
         }
 
-        .template-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='10' y='10' width='80' height='15' rx='2' fill='%23E5E7EB'/%3E%3Crect x='10' y='30' width='40' height='40' rx='2' fill='%23E5E7EB'/%3E%3Crect x='55' y='30' width='35' height='10' rx='2' fill='%23E5E7EB'/%3E%3Crect x='55' y='45' width='35' height='10' rx='2' fill='%23E5E7EB'/%3E%3Crect x='55' y='60' width='35' height='10' rx='2' fill='%23E5E7EB'/%3E%3Crect x='10' y='75' width='80' height='15' rx='2' fill='%23E5E7EB'/%3E%3C/svg%3E");
-            background-repeat: repeat;
-            opacity: 0.8;
-        }
+            /* .template-image::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='10' y='10' width='80' height='15' rx='2' fill='%23E5E7EB'/%3E%3Crect x='10' y='30' width='40' height='40' rx='2' fill='%23E5E7EB'/%3E%3Crect x='55' y='30' width='35' height='10' rx='2' fill='%23E5E7EB'/%3E%3Crect x='55' y='45' width='35' height='10' rx='2' fill='%23E5E7EB'/%3E%3Crect x='55' y='60' width='35' height='10' rx='2' fill='%23E5E7EB'/%3E%3Crect x='10' y='75' width='80' height='15' rx='2' fill='%23E5E7EB'/%3E%3C/svg%3E");
+                background-repeat: repeat;
+                opacity: 0.8;
+            } */
 
         .custom-image {
-            background-image: url("/api/placeholder/800/600");
+            background-image: url("https://img.freepik.com/free-vector/modern-web-design-concept-with-flat-style_23-2147940858.jpg?ga=GA1.1.1643490475.1742809442&semt=ais_hybrid&w=740");
             position: relative;
-        }
-
-        .custom-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='10' y='10' width='80' height='80' rx='2' stroke='%23E5E7EB' stroke-width='2' stroke-dasharray='5 5' fill='none'/%3E%3Cpath d='M50 35L50 65' stroke='%23E5E7EB' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M35 50L65 50' stroke='%23E5E7EB' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-            background-repeat: repeat;
-            opacity: 0.8;
         }
 
         .option-body {
@@ -510,7 +487,7 @@ body {
         .template-preview {
             height: 160px;
             background-color: #f3f4f6;
-            background-image: url("/api/placeholder/400/320");
+            background-image: url("https://img.freepik.com/free-vector/creative-business-landing-page_23-2148999313.jpg?ga=GA1.1.1643490475.1742809442&semt=ais_hybrid&w=740");
             background-size: cover;
             background-position: center;
             position: relative;
@@ -582,7 +559,7 @@ body {
 
         /* Responsive styles */
         @media (max-width: 768px) {
-            .container {
+            .container-select {
                 padding: 1rem;
             }
 
@@ -609,3 +586,73 @@ body {
 /************************************/
 /***** Select Project Page End *****/
 /**********************************/
+
+
+/******************************/
+/***** Select Page Start *****/
+/****************************/
+
+
+/* add pages section start  */
+.add-pages{
+    padding: 100px;
+}
+.page-card-image{
+    border: 1px solid #c3c4c7;
+    border-radius: 7px;
+    height: 145px;
+    width: 190px;
+}
+.page-card-image img{
+    object-fit: cover;
+}
+.selected{
+    border: 2px solid #007bff;
+    border-radius: 10px;
+}
+        
+       
+
+@media (max-width: 991px) {
+    .add-pages{
+        padding: 50px;
+    }
+}
+
+/* add pages section end */
+
+/****************************/
+/***** Select Page End *****/
+/**************************/
+
+
+
+
+
+
+
+
+/********************************/
+/***** Utility Class start *****/
+/******************************/
+.text-grey{
+    color: #50575e;
+}
+.fs-8{
+    font-size: 2.75rem;
+}
+.border-pill{
+    border-radius: 50px;
+}
+.fw-3{
+    font-weight: 400;
+}
+.page-card.selected {
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    /* background-color: #e6f0ff; */
+}
+
+/******************************/
+/***** Utility Class End *****/
+/****************************/
