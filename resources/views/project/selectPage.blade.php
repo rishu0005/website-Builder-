@@ -13,7 +13,7 @@
                 <div class="progress-container">
                     <div class="progress-step">
                         <div class="step-number">1</div>
-                       <a href="{{ route('startProject') }}" class="text-decoration-none "><span>Project Info</span></a> 
+                       <a href="{{ route('newSite') }}" class="text-decoration-none "><span>Project Info</span></a> 
                     </div>
                     <div class="step-divider"></div>
                     <div class="progress-step active">
