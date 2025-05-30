@@ -408,7 +408,7 @@
     <!-- Header -->
     <div class="header">
       <h1><i class="fas fa-user-edit"></i> Why CHoose Us Section</h1>
-      <p>Create your perfect WHy choose us  section with live preview</p>
+      <p>Create your perfect Why choose us  section with live preview</p>
     </div>
 
     <div class="row justify-content-center g-4">
