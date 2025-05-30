@@ -425,7 +425,7 @@
         <!-- Topbar -->
         <nav class="topbar">
             <h5 class="m-0">Welcome, Admin 👋</h5>
-            <a href="{{ route('newSite') }}" class="button">New Site</a>
+            <a href="{{ route('new-site') }}" class="button">New Site</a>
         </nav>
 
         <!-- Dashboard -->
@@ -466,7 +466,7 @@
             <div class="mt-5">
                 <h4 class="mb-3">Quick Actions</h4>
                 <div class="d-flex flex-wrap gap-3">
-                    <a href="{{ route('newSite') }}" class="quick-action-btn"><i class="bi bi-plus-circle-fill"></i> Create New Site</a>
+                    <a href="{{ route('new-site') }}" class="quick-action-btn"><i class="bi bi-plus-circle-fill"></i> Create New Site</a>
                     <button class="quick-action-btn"><i class="bi bi-palette-fill"></i> Manage Templates</button>
                     <button class="quick-action-btn"><i class="bi bi-file-earmark-text-fill"></i> View All Pages</button>
                 </div>

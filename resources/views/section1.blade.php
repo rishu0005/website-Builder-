@@ -447,7 +447,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Choose Your Sections</h1>
+            <h1 class="w-75 d-flex mx-auto">Choose Your Sections for Home Page</h1>
             <p>Select the sections you want to include in your website. Mix and match to create the perfect layout for your needs.</p>
         </div>
 

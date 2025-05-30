@@ -516,9 +516,9 @@
             </div>
             
             <div class="form-group floating-label">
-                <input type="email" id="email" class="p-4" placeholder=" " required>
+                <input type="text" id="email" class="p-4" placeholder=" " required>
                 <label for="email">Project Category  <span class="form-required">*</span></label>
-                <div class="error-message">Please enter a valid email address</div>
+                <div class="error-message">Please enter a valid Category </div>
             </div>
             
             {{-- <div class="form-group floating-label">
@@ -538,10 +538,10 @@
             <div class="helper-text">
                 All fields marked with <span class="form-required">*</span> are required
             </div>
-            <button class="button" onclick="submitForm()">
+            <a href="{{ route('select-site') }}" class="button" onclick="submitForm()">
                 <span>🚀</span>
                Start Your Project
-            </button>
+            </a>
         </div>
     </div>
 @endsection
@@ -561,12 +561,12 @@
                 }
             });
             
-            if (!hasError) {
-                document.getElementById('successMessage').classList.add('show');
-                setTimeout(() => {
-                    document.getElementById('successMessage').classList.remove('show');
-                }, 5000);
-            }
+            // if (!hasError) {
+            //     document.getElementById('successMessage').classList.add('show');
+            //     setTimeout(() => {
+            //         document.getElementById('successMessage').classList.remove('show');
+            //     }, 5000);
+            // }
         }
 
         // Real-time validation

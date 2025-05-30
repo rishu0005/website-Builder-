@@ -781,10 +781,10 @@
                     <i class="fas fa-arrow-left"></i>
                     Back
                 </button>
-                <button class="continue-button" id="continueButton" disabled>
+                <a href="{{ route('select-pages') }}" class="continue-button" id="continueButton" disabled>
                     Continue
                     <i class="fas fa-arrow-right"></i>
-                </button>
+                </a>
             </div>
         </div>
     </main>

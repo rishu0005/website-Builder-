@@ -594,6 +594,563 @@
             </div>
         </div>
     </div>
+<script>
+    // Navbar Customization Script
+class NavbarCustomizer {
+    constructor() {
+        this.currentLayout = 'horizontal';
+        this.settings = {
+            companyName: 'Your Brand',
+            logoUrl: '',
+            transparentBg: false,
+            bgColor: '#ffffff',
+            textColor: '#2d3748',
+            hoverColor: '#667eea',
+            stickyNav: true,
+            dropShadow: false,
+            navLinks: [
+                { text: 'Home', url: '/' },
+                { text: 'About', url: '/about' },
+                { text: 'Services', url: '/services' },
+                { text: 'Contact', url: '/contact' }
+            ]
+        };
+        this.init();
+    }
+
+    init() {
+        this.bindEvents();
+        this.updatePreview();
+        this.syncColorInputs();
+    }
+
+    bindEvents() {
+        // Layout selection
+        document.querySelectorAll('.layout-option').forEach(option => {
+            option.addEventListener('click', (e) => this.selectLayout(e.currentTarget));
+        });
+
+        // Form inputs
+        document.getElementById('companyName').addEventListener('input', (e) => {
+            this.settings.companyName = e.target.value || 'Your Brand';
+            this.updatePreview();
+        });
+
+        document.getElementById('logoUrl').addEventListener('input', (e) => {
+            this.settings.logoUrl = e.target.value;
+            this.updatePreview();
+        });
+
+        // Color inputs - sync color picker with text input
+        this.bindColorInput('bgColor');
+        this.bindColorInput('textColor');
+        this.bindColorInput('hoverColor');
+
+        // Navigation links - bind existing inputs
+        this.bindNavLinkInputs();
+
+        // Checkboxes
+        document.getElementById('transparentBg').addEventListener('click', () => {
+            this.settings.transparentBg = !this.settings.transparentBg;
+            this.updatePreview();
+        });
+
+        document.getElementById('stickyNav').addEventListener('click', () => {
+            this.settings.stickyNav = !this.settings.stickyNav;
+            this.updatePreview();
+        });
+
+        document.getElementById('dropShadow').addEventListener('click', () => {
+            this.settings.dropShadow = !this.settings.dropShadow;
+            this.updatePreview();
+        });
+    }
+
+    bindColorInput(colorType) {
+        const colorPicker = document.getElementById(colorType);
+        const textInput = document.getElementById(colorType + 'Text');
+
+        colorPicker.addEventListener('change', (e) => {
+            this.settings[colorType] = e.target.value;
+            textInput.value = e.target.value;
+            this.updatePreview();
+        });
+
+        textInput.addEventListener('input', (e) => {
+            const color = e.target.value;
+            if (this.isValidColor(color)) {
+                this.settings[colorType] = color;
+                colorPicker.value = color;
+                this.updatePreview();
+            }
+        });
+    }
+
+    bindNavLinkInputs() {
+        const container = document.getElementById('navLinksContainer');
+        const inputs = container.querySelectorAll('.nav-link-item');
+        
+        inputs.forEach((item, index) => {
+            const textInput = item.querySelector('input[placeholder="Link Text"]');
+            const urlInput = item.querySelector('input[placeholder="Link URL"]');
+            
+            textInput.addEventListener('input', (e) => {
+                if (this.settings.navLinks[index]) {
+                    this.settings.navLinks[index].text = e.target.value;
+                    this.updatePreview();
+                }
+            });
+
+            urlInput.addEventListener('input', (e) => {
+                if (this.settings.navLinks[index]) {
+                    this.settings.navLinks[index].url = e.target.value;
+                }
+            });
+        });
+    }
+
+    selectLayout(layoutElement) {
+        // Remove selected class from all layouts
+        document.querySelectorAll('.layout-option').forEach(opt => {
+            opt.classList.remove('selected');
+        });
+        
+        // Add selected class to clicked layout
+        layoutElement.classList.add('selected');
+        
+        // Update current layout
+        this.currentLayout = layoutElement.dataset.layout;
+        this.updatePreview();
+    }
+
+    syncColorInputs() {
+        // Sync initial color values
+        ['bgColor', 'textColor', 'hoverColor'].forEach(colorType => {
+            const colorPicker = document.getElementById(colorType);
+            const textInput = document.getElementById(colorType + 'Text');
+            colorPicker.value = this.settings[colorType];
+            textInput.value = this.settings[colorType];
+        });
+    }
+
+    addNavLink() {
+        const newLink = { text: 'New Link', url: '#' };
+        this.settings.navLinks.push(newLink);
+        
+        const container = document.getElementById('navLinksContainer');
+        const linkItem = this.createNavLinkElement(newLink, this.settings.navLinks.length - 1);
+        container.appendChild(linkItem);
+        
+        this.updatePreview();
+    }
+
+    createNavLinkElement(link, index) {
+        const linkItem = document.createElement('div');
+        linkItem.className = 'nav-link-item';
+        linkItem.innerHTML = `
+            <input type="text" class="form-input" placeholder="Link Text" value="${link.text}">
+            <input type="text" class="form-input" placeholder="Link URL" value="${link.url}">
+            <button class="remove-link-btn" onclick="navbarCustomizer.removeNavLink(this, ${index})">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+
+        // Bind events for new inputs
+        const textInput = linkItem.querySelector('input[placeholder="Link Text"]');
+        const urlInput = linkItem.querySelector('input[placeholder="Link URL"]');
+        
+        textInput.addEventListener('input', (e) => {
+            this.settings.navLinks[index].text = e.target.value;
+            this.updatePreview();
+        });
+
+        urlInput.addEventListener('input', (e) => {
+            this.settings.navLinks[index].url = e.target.value;
+        });
+
+        return linkItem;
+    }
+
+    removeNavLink(button, index) {
+        // Remove from settings array
+        this.settings.navLinks.splice(index, 1);
+        
+        // Remove from DOM
+        button.closest('.nav-link-item').remove();
+        
+        // Re-index remaining items
+        this.rebindNavLinks();
+        this.updatePreview();
+    }
+
+    rebindNavLinks() {
+        const container = document.getElementById('navLinksContainer');
+        const items = container.querySelectorAll('.nav-link-item');
+        
+        items.forEach((item, index) => {
+            const removeBtn = item.querySelector('.remove-link-btn');
+            removeBtn.onclick = () => this.removeNavLink(removeBtn, index);
+            
+            const textInput = item.querySelector('input[placeholder="Link Text"]');
+            const urlInput = item.querySelector('input[placeholder="Link URL"]');
+            
+            // Update event listeners
+            textInput.oninput = (e) => {
+                this.settings.navLinks[index].text = e.target.value;
+                this.updatePreview();
+            };
+
+            urlInput.oninput = (e) => {
+                this.settings.navLinks[index].url = e.target.value;
+            };
+        });
+    }
+
+    updatePreview() {
+        const previewNavbar = document.getElementById('previewNavbar');
+        const previewLogo = document.getElementById('previewLogo');
+        const previewNavLinks = document.getElementById('previewNavLinks');
+
+        // Update logo
+        if (this.settings.logoUrl) {
+            previewLogo.innerHTML = `<img src="${this.settings.logoUrl}" alt="${this.settings.companyName}" style="height: 30px; width: auto;">`;
+        } else {
+            previewLogo.textContent = this.settings.companyName;
+        }
+
+        // Update navigation links
+        previewNavLinks.innerHTML = '';
+        this.settings.navLinks.forEach(link => {
+            const li = document.createElement('li');
+            li.textContent = link.text;
+            previewNavLinks.appendChild(li);
+        });
+
+        // Apply layout
+        this.applyLayoutStyles(previewNavbar);
+
+        // Apply colors and styles
+        this.applyStyles(previewNavbar);
+    }
+
+    applyLayoutStyles(navbar) {
+        // Reset all layout classes
+        navbar.className = 'preview-navbar';
+        
+        switch (this.currentLayout) {
+            case 'horizontal':
+                navbar.style.display = 'flex';
+                navbar.style.justifyContent = 'space-between';
+                navbar.style.alignItems = 'center';
+                navbar.style.flexDirection = 'row';
+                break;
+                
+            case 'centered':
+                navbar.style.display = 'flex';
+                navbar.style.justifyContent = 'center';
+                navbar.style.alignItems = 'center';
+                navbar.style.flexDirection = 'row';
+                navbar.style.gap = '2rem';
+                break;
+                
+            case 'vertical':
+                navbar.style.display = 'flex';
+                navbar.style.flexDirection = 'column';
+                navbar.style.alignItems = 'center';
+                navbar.style.gap = '1rem';
+                break;
+                
+            case 'sidebar':
+                navbar.style.display = 'flex';
+                navbar.style.flexDirection = 'column';
+                navbar.style.alignItems = 'flex-start';
+                navbar.style.gap = '1rem';
+                navbar.style.padding = '2rem 1rem';
+                break;
+        }
+    }
+
+    applyStyles(navbar) {
+        // Background
+        if (this.settings.transparentBg) {
+            navbar.style.backgroundColor = 'transparent';
+        } else {
+            navbar.style.backgroundColor = this.settings.bgColor;
+        }
+
+        // Text color
+        navbar.style.color = this.settings.textColor;
+        
+        // Drop shadow
+        if (this.settings.dropShadow) {
+            navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        } else {
+            navbar.style.boxShadow = 'none';
+        }
+
+        // Apply hover styles to nav links
+        const navLinks = navbar.querySelectorAll('li');
+        navLinks.forEach(link => {
+            link.style.color = this.settings.textColor;
+            link.onmouseenter = () => {
+                link.style.color = this.settings.hoverColor;
+            };
+            link.onmouseleave = () => {
+                link.style.color = this.settings.textColor;
+            };
+        });
+    }
+
+    generateNavbar() {
+        const html = this.generateHTML();
+        const css = this.generateCSS();
+        
+        // Create modal or new window to show generated code
+        this.showGeneratedCode(html, css);
+    }
+
+    generateHTML() {
+        const logoHTML = this.settings.logoUrl 
+            ? `<img src="${this.settings.logoUrl}" alt="${this.settings.companyName}" class="navbar-logo-img">`
+            : this.settings.companyName;
+
+        const linksHTML = this.settings.navLinks
+            .map(link => `<li><a href="${link.url}">${link.text}</a></li>`)
+            .join('\n        ');
+
+        let navbarClass = `navbar navbar-${this.currentLayout}`;
+        if (this.settings.stickyNav) navbarClass += ' navbar-sticky';
+        if (this.settings.dropShadow) navbarClass += ' navbar-shadow';
+        if (this.settings.transparentBg) navbarClass += ' navbar-transparent';
+
+        return `<nav class="${navbarClass}">
+    <div class="navbar-container">
+        <div class="navbar-brand">
+            ${logoHTML}
+        </div>
+        <ul class="navbar-nav">
+        ${linksHTML}
+        </ul>
+    </div>
+</nav>`;
+    }
+
+    generateCSS() {
+        return `.navbar {
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-horizontal .navbar-container {
+    justify-content: space-between;
+}
+
+.navbar-centered .navbar-container {
+    justify-content: center;
+    gap: 2rem;
+}
+
+.navbar-vertical .navbar-container {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.navbar-sidebar .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: ${this.settings.textColor};
+}
+
+.navbar-logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.navbar-vertical .navbar-nav,
+.navbar-sidebar .navbar-nav {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.navbar-nav li a {
+    color: ${this.settings.textColor};
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav li a:hover {
+    color: ${this.settings.hoverColor};
+    background-color: ${this.settings.hoverColor}20;
+}
+
+.navbar-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-shadow {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-transparent {
+    background-color: transparent;
+}
+
+${!this.settings.transparentBg ? `.navbar {
+    background-color: ${this.settings.bgColor};
+}` : ''}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}`;
+    }
+
+    showGeneratedCode(html, css) {
+        // Create modal backdrop
+        const modal = document.createElement('div');
+        modal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            padding: 2rem;
+        `;
+
+        // Create modal content
+        const modalContent = document.createElement('div');
+        modalContent.style.cssText = `
+            background: white;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 900px;
+            max-height: 90%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        `;
+
+        modalContent.innerHTML = `
+            <div style="padding: 2rem; border-bottom: 1px solid #e2e8f0;">
+                <h2 style="margin: 0; color: #2d3748;">Generated Navbar Code</h2>
+                <p style="margin: 0.5rem 0 0 0; color: #718096;">Copy the HTML and CSS code below to use in your project.</p>
+            </div>
+            <div style="flex: 1; overflow: auto; padding: 2rem;">
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;">HTML</h3>
+                    <div style="position: relative;">
+                        <pre style="background: #f7fafc; padding: 1rem; border-radius: 8px; overflow: auto; margin: 0; border: 1px solid #e2e8f0;"><code>${this.escapeHtml(html)}</code></pre>
+                        <button onclick="navigator.clipboard.writeText(\`${html.replace(/`/g, '\\`')}\`)" style="position: absolute; top: 10px; right: 10px; background: #667eea; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer;">Copy HTML</button>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;">CSS</h3>
+                    <div style="position: relative;">
+                        <pre style="background: #f7fafc; padding: 1rem; border-radius: 8px; overflow: auto; margin: 0; border: 1px solid #e2e8f0;"><code>${this.escapeHtml(css)}</code></pre>
+                        <button onclick="navigator.clipboard.writeText(\`${css.replace(/`/g, '\\`')}\`)" style="position: absolute; top: 10px; right: 10px; background: #667eea; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer;">Copy CSS</button>
+                    </div>
+                </div>
+            </div>
+            <div style="padding: 2rem; border-top: 1px solid #e2e8f0;">
+                <button onclick="this.closest('.modal-backdrop').remove()" style="background: #e53e3e; color: white; border: none; padding: 0.75rem 2rem; border-radius: 8px; cursor: pointer; float: right;">Close</button>
+            </div>
+        `;
+
+        modal.className = 'modal-backdrop';
+        modal.appendChild(modalContent);
+        document.body.appendChild(modal);
+
+        // Close modal when clicking backdrop
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.remove();
+            }
+        });
+    }
+
+    escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    isValidColor(color) {
+        return /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(color);
+    }
+
+    toggleCheckbox(checkbox) {
+        checkbox.classList.toggle('checked');
+    }
+}
+
+// Global functions for HTML onclick handlers
+function toggleCheckbox(element) {
+    navbarCustomizer.toggleCheckbox(element);
+}
+
+function addNavLink() {
+    navbarCustomizer.addNavLink();
+}
+
+function removeNavLink(button) {
+    const index = Array.from(button.closest('#navLinksContainer').children).indexOf(button.closest('.nav-link-item'));
+    navbarCustomizer.removeNavLink(button, index);
+}
+
+function generateNavbar() {
+    navbarCustomizer.generateNavbar();
+}
+
+// Initialize the customizer when DOM is loaded
+let navbarCustomizer;
+document.addEventListener('DOMContentLoaded', () => {
+    navbarCustomizer = new NavbarCustomizer();
+});
+
+// Export for module usage (optional)
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = NavbarCustomizer;
+}
+</script>
 </body>
 </html>
 
