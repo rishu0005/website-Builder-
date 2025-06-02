@@ -447,11 +447,11 @@
             <p>Design the perfect navigation bar for your website. Choose a layout, customize colors, and add your navigation links.</p>
         </div>
 
-        <div class="main-content">
+        <div class="main-content d-flex justify-content-center">
             <!-- Customization Panel -->
             <div class="customization-panel">
                 <!-- Layout Selection -->
-                <div class="section-card">
+                {{-- <div class="section-card">
                     <h3 class="section-title">Choose Layout</h3>
                     <div class="layout-grid">
                         <div class="layout-option layout-horizontal selected" data-layout="horizontal">
@@ -471,7 +471,7 @@
                             <div class="layout-name">Sidebar</div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 <!-- Brand Settings -->
                 <div class="section-card">
@@ -568,10 +568,14 @@
                         <label>Drop Shadow</label>
                     </div>
                 </div>
+                <div class="form-group d-flex justify-content-between">
+                    <a href="#" class="add-link-btn text-decoration-none">Save</a>
+                    <a href="#" class="add-link-btn text-decoration-none">Next Section</a>
+                </div>
             </div>
 
             <!-- Preview Panel -->
-            <div class="preview-container">
+            {{-- <div class="preview-container">
                 <div class="section-card">
                     <h3 class="section-title">Live Preview</h3>
                     <div class="navbar-preview">
@@ -591,7 +595,7 @@
                         Generate Navbar Code
                     </button>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 <script>
