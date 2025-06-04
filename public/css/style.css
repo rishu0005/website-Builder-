@@ -1,15 +1,4 @@
-/* 
-:root {
-    --primary-color: #3b82f6;
-    --primary-hover: #2563eb;
-    --success-color: #10b981;
-    --error-color: #ef4444;
-    --text-color: #1f2937;
-    --light-gray: #f3f4f6;
-    --border-color: #e5e7eb;
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-} */
+
    :root {
             /* Primary Colors - Deep Blue to Light Blue Gradient */
             --primary-dark: #1e293b;
