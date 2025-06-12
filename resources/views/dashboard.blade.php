@@ -8,7 +8,7 @@
     
            </style>
 
-{{-- <div class="d-flex"> --}}
+<div class="d-flex">
     <!-- Sidebar -->
     {{-- <aside class="sidebar p-4">
         <div>
@@ -79,7 +79,7 @@
 
         </div>
     </div>
-{{-- </div> --}}
+</div>
 
 @endsection
  

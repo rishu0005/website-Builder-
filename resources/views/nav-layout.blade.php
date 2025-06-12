@@ -1,66 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar Customizer</title>
-    <style>
-        :root {
-            /* Primary Colors - Deep Blue to Light Blue Gradient */
-            --primary-dark: #1e293b;
-            --primary-medium: #334155;
-            --primary-light: #64748b;
-            --primary-accent: #3b82f6;
-            --primary-hover: #2563eb;
-            
-            /* Secondary Colors - Purple to Pink Gradient */
-            --secondary-dark: #581c87;
-            --secondary-medium: #7c3aed;
-            --secondary-light: #a855f7;
-            --secondary-accent: #ec4899;
-            
-            /* Neutral Colors */
-            --bg-primary: #f8fafc;
-            --bg-secondary: #ffffff;
-            --bg-card: #ffffff;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --text-muted: #94a3b8;
-            --border-color: #e2e8f0;
-            --border-light: #f1f5f9;
-            
-            /* Success/Warning/Error Colors */
-            --success: #10b981;
-            --success-light: #d1fae5;
-            --warning: #f59e0b;
-            --warning-light: #fef3c7;
-            --error: #ef4444;
-            --error-light: #fee2e2;
-            
-            /* Shadows */
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            
-            /* Gradients */
-            --gradient-primary: linear-gradient(135deg, var(--primary-accent) 0%, var(--secondary-medium) 100%);
-            --gradient-secondary: linear-gradient(135deg, var(--secondary-medium) 0%, var(--secondary-accent) 100%);
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
+@extends('main-layout')
+@section('title' , 'Navbar customizer')
+@section('style')
+<style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
 
         .container {
             max-width: 800px;
@@ -486,8 +428,9 @@
             }
         }
     </style>
-</head>
-<body>
+@endsection
+
+@section('content')
     <div class="container">
         <div class="form-container">
             <div class="form-header">
@@ -644,7 +587,9 @@
             </div>
         </div>
     </div>
+@endsection
 
+@section('script')
     <script>
         let currentStep = 1;
         let selectedLayout = 'left';
@@ -768,5 +713,5 @@
 // Your navbar has been configured! In a real application, this would generate the HTML/CSS code for your navbar.`);
 //         }
     </script>
-</body>
-</html>
+
+@endsection

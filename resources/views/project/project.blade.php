@@ -44,7 +44,7 @@
             --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
         }
 
-        * {
+        /* * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -59,9 +59,9 @@
             align-items: center;
             justify-content: center;
             position: relative;
-        }
+        } */
 
-        body::before {
+        /* body::before {
             content: '';
             position: fixed;
             top: 0;
@@ -71,14 +71,14 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
             pointer-events: none;
             opacity: 0.3;
-        }
+        } */
 
         .container-form {
             max-width: 1200px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            /* background: rgba(255, 255, 255, 0.95); */
             backdrop-filter: blur(20px);
-            border-radius: 24px;
+            /* border-radius: 24px; */
             box-shadow: var(--shadow-2xl), var(--shadow-glow);
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.2);

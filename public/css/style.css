@@ -21,19 +21,6 @@
     --text-muted: #94a3b8;
     --border-color: #e2e8f0;
     --border-light: #f1f5f9;
-
-       /* Dark Theme */
-     /* .dark-theme {
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-card: #1e293b;
-            --text-primary: #f8fafc;
-            --text-secondary: #cbd5e1;
-            --text-muted: #64748b;
-            --border-color: #334155;
-            --border-light: #475569;
-    } */
-
                 
     /* Success/Warning/Error Colors */
     --success: #10b981;
@@ -62,8 +49,14 @@
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 body {
+    display: flex;
+    min-height: 100vh;
     background: var(--bg-primary);
     color: var(--text-primary);
+}
+main{
+    flex: 1;
+    /* padding: 2rem; */
 }
 
 /* Sidebar Start */
@@ -76,7 +69,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     box-shadow: var(--shadow-xl);
-    position: fixed;
+    position: relative;
     overflow: hidden;
 }
 
@@ -220,46 +213,46 @@ body {
 /**************************************/
 /***** Select Project Page Start *****/
 /************************************/
- .container-select {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            width: 100%;
-        }
+.container-select {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
+}
 
-        .page-header {
-            background-color: white;
-            box-shadow: var(--shadow-sm);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
+.page-header {
+    background-color: white;
+    box-shadow: var(--shadow-sm);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
 
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        .project-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
+.project-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
 
-        .project-name {
-            font-weight: 600;
-            font-size: 1.25rem;
-        }
+.project-name {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
 
-        .project-badge {
-            background-color: var(--light-gray);
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
+.project-badge {
+    background-color: var(--light-gray);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
 
         .progress-container {
             display: flex;

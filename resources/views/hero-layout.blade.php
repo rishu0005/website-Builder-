@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hero Layout Selector</title>
+@extends('main-layout')
+@section('title', 'Hero Layout Selector')
+@section('style')
     <style>
         :root {
             /* Primary Colors - Deep Blue to Light Blue Gradient */
@@ -326,8 +323,10 @@
             }
         }
     </style>
-</head>
-<body>
+@endsection
+
+@section('content')
+
     <div class="container">
         <div class="header">
             <h1>Choose Your Hero Layout</h1>
@@ -417,7 +416,9 @@
             <a href="{{ route('hero') }}" class="btn-primary text-decoration-none" onclick="implementLayout()">Use This Layout</a>
         </div>
     </div>
+@endsection
 
+@section('script')
     <script>
         const layouts = {
             1: {
@@ -523,5 +524,4 @@
             });
         });
     </script>
-</body>
-</html>
+@endsection

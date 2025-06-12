@@ -17,7 +17,7 @@
         <div>
             <h3> WebBuilder</h3>
             <nav class="d-flex flex-column gap-2">
-                <a href="#"><i class="bi bi-house-door-fill"></i> Dashboard</a>
+                <a href="{{ route('dashboard') }}"><i class="bi bi-house-door-fill"></i> Dashboard</a>
                 <a href="#"><i class="bi bi-layers-fill"></i> My Sites</a>
                 <a href="#"><i class="bi bi-file-earmark-text-fill"></i> Pages</a>
                 <a href="#"><i class="bi bi-palette-fill"></i> Templates</a>
@@ -26,7 +26,7 @@
         </div>
         <button class="btn btn-light text-dark mt-5 w-100">Logout</button>
     </aside>
-    <main style="margin-left:18%">
+    <main>
         @yield('content')
     </main>
 

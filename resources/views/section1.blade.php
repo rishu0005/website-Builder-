@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose Your Website Sections</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+@extends('main-layout')
+@section('title', 'Choose your sectiion for home page')
+@section('style')
+<style>
+
+    :root {
+        --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --accent-color: #667eea;
             --text-dark: #2d3748;
@@ -19,14 +15,10 @@
             --glow: 0 0 30px rgba(102, 126, 234, 0.3);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            /* font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; */
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             color: var(--text-dark);
@@ -442,18 +434,19 @@
                 font-size: 0.9rem;
             }
         }
-    </style>
-</head>
-<body>
+        </style>
+        @endsection
+
+@section('content')
     <div class="container">
         <div class="header">
             <h1 class="w-75 d-flex mx-auto">Choose Your Sections for Home Page</h1>
             <p>Select the sections you want to include in your website. Mix and match to create the perfect layout for your needs.</p>
         </div>
 
-        <div class="progress-bar-container">
+        {{-- <div class="progress-bar-container">
             <div class="progress-bar"></div>
-        </div>
+        </div> --}}
 
         <div class="filter-section">
             <div class="filter-buttons">
@@ -494,8 +487,10 @@
     </div>
 
     <div class="selection-counter" id="selectionCounter">0</div>
+@endsection
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> --}}
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+@section('script')
     <script>
         const sections = [
             {
@@ -753,5 +748,4 @@
             }, 500);
         });
     </script>
-</body>
-</html>
+@endsection
