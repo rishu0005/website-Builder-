@@ -33,3 +33,6 @@ Route::get('/service', function () {  return view('service');})->name('service')
 Route::get('/faq-layout', function () {  return view('faq-layout');})->name('faq-layout');
 Route::get('/faq', function () {  return view('faq');})->name('faq');
 
+
+Route::get('/contact-layout', function () {  return view('contact-layout');})->name('contact-layout');
+Route::get('/contact', function () {  return view('contact');})->name('contact');

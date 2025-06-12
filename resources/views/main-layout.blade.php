@@ -13,7 +13,7 @@
 </head>
 <body>
         <!-- Sidebar -->
-    {{-- <aside class="sidebar p-4">
+    <aside class="sidebar p-4">
         <div>
             <h3> WebBuilder</h3>
             <nav class="d-flex flex-column gap-2">
@@ -25,8 +25,8 @@
             </nav>
         </div>
         <button class="btn btn-light text-dark mt-5 w-100">Logout</button>
-    </aside> --}}
-    <main>
+    </aside>
+    <main style="margin-left:18%">
         @yield('content')
     </main>
 

@@ -486,10 +486,10 @@
 
         <div class="continue-section">
             <p class="mb-3">Selected <span id="selectedCount">0</span> sections</p>
-            <button class="continue-btn" id="continueBtn" disabled>
+            <a href="{{ route('hero-layout') }}" style="text-decoration: none;" class="continue-btn" id="continueBtn" disabled>
                 <i class="fas fa-arrow-right me-2"></i>
                 Continue with Selected Sections
-            </button>
+            </a>
         </div>
     </div>
 
@@ -733,15 +733,15 @@
         });
 
         // Continue button functionality
-        document.getElementById('continueBtn').addEventListener('click', function() {
-            if (selectedSections.length > 0) {
-                console.log('Selected sections:', selectedSections);
-                // Redirect to next step or show summary
-                alert(`Great! You've selected ${selectedSections.length} sections. Proceeding to customization...`);
-                // In a real application, you would redirect or proceed to the next step
-                // window.location.href = '/customize?sections=' + selectedSections.join(',');
-            }
-        });
+        // document.getElementById('continueBtn').addEventListener('click', function() {
+        //     if (selectedSections.length > 0) {
+        //         console.log('Selected sections:', selectedSections);
+        //         // Redirect to next step or show summary
+        //         alert(`Great! You've selected ${selectedSections.length} sections. Proceeding to customization...`);
+        //         // In a real application, you would redirect or proceed to the next step
+        //         // window.location.href = '/customize?sections=' + selectedSections.join(',');
+        //     }
+        // });
 
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
