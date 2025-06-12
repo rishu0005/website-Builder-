@@ -1,26 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customize Your Footer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+@extends('main-layout')
+@section('title', 'Customize Your Footer')
+@section('style')
     <style>
-        :root {
-            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            --secondary-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-            --accent-color: #6366f1;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --border-color: #e5e7eb;
-            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
-            --glow: 0 0 30px rgba(99, 102, 241, 0.3);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
@@ -504,10 +485,12 @@
             .color-input-group { flex-direction: column; align-items: stretch; }
             .social-links { grid-template-columns: 1fr; }
         }
-    </style>
-</head>
-<body>
-    <div class="container">
+</style>
+
+@endsection
+
+@section('content')
+<div class="container">
         <div class="header">
             <h1>Customize Your Footer</h1>
             <p>Design a professional footer for your website. Choose layout, add content sections, social links, and customize the appearance.</p>
@@ -698,6 +681,10 @@ Consulting|/consulting</textarea>
             </div>
         </div>
     </div>
+
+@endsection
+
+@section('script')
  <script>
     // Footer Customizer JavaScript
 
@@ -1449,5 +1436,4 @@ function generateFooterCss(bgColor, textColor, linkHoverColor, showBorder, cente
 
  </script>
 
-</body>
-</html>
+@endsection

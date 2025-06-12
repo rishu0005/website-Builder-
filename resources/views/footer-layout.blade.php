@@ -1,61 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer Section Layouts</title>
-    <style>
-        :root {
-            /* Primary Colors - Deep Blue to Light Blue Gradient */
-            --primary-dark: #1e293b;
-            --primary-medium: #334155;
-            --primary-light: #64748b;
-            --primary-accent: #3b82f6;
-            --primary-hover: #2563eb;
-            
-            /* Secondary Colors - Purple to Pink Gradient */
-            --secondary-dark: #581c87;
-            --secondary-medium: #7c3aed;
-            --secondary-light: #a855f7;
-            --secondary-accent: #ec4899;
-            
-            /* Neutral Colors */
-            --bg-primary: #f8fafc;
-            --bg-secondary: #ffffff;
-            --bg-card: #ffffff;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --text-muted: #94a3b8;
-            --border-color: #e2e8f0;
-            --border-light: #f1f5f9;
-            
-            /* Success/Warning/Error Colors */
-            --success: #10b981;
-            --success-light: #d1fae5;
-            --warning: #f59e0b;
-            --warning-light: #fef3c7;
-            --error: #ef4444;
-            --error-light: #fee2e2;
-            
-            /* Shadows */
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            
-            /* Gradients */
-            --gradient-primary: linear-gradient(135deg, var(--primary-accent) 0%, var(--secondary-medium) 100%);
-            --gradient-secondary: linear-gradient(135deg, var(--secondary-medium) 0%, var(--secondary-accent) 100%);
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
+@extends('main-layout')
+@section('title', 'Footer Section Layouts')
+@section('style')
+<style>
+body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
@@ -173,23 +120,6 @@
             box-shadow: var(--shadow-md);
         }
 
-        .redirect-btn {
-            padding: 18px 40px;
-            background: var(--gradient-secondary);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .redirect-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-xl);
-        }
 
         .selection-info {
             background: var(--success-light);
@@ -206,13 +136,14 @@
 
         /* Footer Section */
         .footer-preview {
-            min-height: 600px;
+            min-height: 300px;
+            overflow: hidden;
             position: relative;
         }
 
         .footer-container {
             display: none;
-            min-height: 600px;
+            min-height: 310px;
         }
 
         .footer-container.active {
@@ -529,9 +460,11 @@
             }
         }
     </style>
-</head>
-<body>
-    <div class="container">
+
+@endsection
+
+@section('content')
+    <div class="container p-0">
         <!-- Layout Selector Form -->
         <div class="layout-selector">
             <form class="selector-form" id="footerForm">
@@ -559,7 +492,7 @@
 
                 <div class="form-actions">
                     <button type="button" class="preview-btn" onclick="previewFooter()">Preview Changes</button>
-                    <button type="button" class="redirect-btn" id="proceedBtn" onclick="proceedWithFooter()">
+                    <button type="button" class="button" id="proceedBtn" onclick="proceedWithFooter()">
                         Use This Footer →
                     </button>
                 </div>
@@ -706,7 +639,9 @@
             </footer>
         </div>
     </div>
+@endsection
 
+@section('script')
     <script>
         let selectedFooterValue = 1;
 
@@ -792,5 +727,5 @@
             }
         });
     </script>
-</body>
-</html>
+
+@endsection

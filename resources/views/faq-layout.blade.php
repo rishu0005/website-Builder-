@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ Layout Selector</title>
-    <style>
+@extends('main-layout')
+@section('title', 'FAQ Layout Selector')
+
+@section('style')
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -15,22 +13,23 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: #1a202c;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
             min-height: 100vh;
-            padding: 40px 20px;
+            /* padding: 40px    20px; */
         }
 
         .main-header {
             text-align: center;
             margin-bottom: 60px;
-            color: white;
+            color:  #667eea;
+
         }
 
         .main-header h1 {
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 15px;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            /* text-shadow: 0 4px 20px rgba(0,0,0,0.3); */
         }
 
         .main-header p {
@@ -68,9 +67,9 @@
         }
 
         .layout-card.selected {
-            border-color: #10b981;
+            border-color: var(--primary-accent);
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 35px 80px rgba(16, 185, 129, 0.3);
+            box-shadow: 0 35px 80px rgba(128, 91, 174, 0.3);
         }
 
         .layout-card.selected::after {
@@ -80,7 +79,7 @@
             right: 20px;
             width: 40px;
             height: 40px;
-            background: #10b981;
+            background: var(--primary-accent);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -336,10 +335,11 @@
                 max-width: 300px;
             }
         }
-    </style>
-</head>
-<body>
-    <div class="container">
+</style>
+@endsection
+
+@section('content')
+<div class="container">
         <div class="main-header">
             <h1>Choose Your FAQ Style</h1>
             <p>Select the layout that best fits your website's design</p>
@@ -349,7 +349,7 @@
             <!-- Layout 1: Modern Accordion -->
             <div class="layout-card" onclick="selectLayout('accordion', this)">
                 <div class="layout-header accordion-bg">
-                    <h3 class="layout-title">Interactive Accordion</h3>
+                    <h3 class="layout-title bg-light">Interactive Accordion</h3>
                     <p class="layout-subtitle" style="color: rgba(255,255,255,0.9);">Expandable sections with animations</p>
                 </div>
                 <div class="layout-preview accordion-preview">
@@ -428,8 +428,10 @@
             </a>
         </div>
     </div>
+@endsection
 
-    <script>
+@section('script')
+<script>
         let selectedLayout = null;
         let selectedCard = null;
 
@@ -506,6 +508,5 @@
             }
         `;
         document.head.appendChild(style);
-    </script>
-</body>
-</html>
+</script>
+@endsection

@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Custom Navbar Builder</title>
+@extends('main-layout')
+@section('title', 'custom navbar bulder')
+@section('style')
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f9fc;
-      padding: 20px;
-    }
+ 
     h1, h2 {
       color: #333;
     }
@@ -59,7 +53,7 @@
       border-radius: 6px;
       background: #f9f9f9;
     }
-    button {
+    /* button {
       padding: 8px 12px;
       margin-top: 10px;
       background: #007bff;
@@ -70,21 +64,20 @@
     }
     button:hover {
       background: #0056b3;
-    }
+    } */
     textarea {
       height: 100px;
     }
   </style>
-</head>
-<body>
+@endsection
 
-  <h1>Custom Navbar Builder</h1>
+@section('content')
 
   <form id="navbar-builder">
     <h2>Navbar Customization</h2>
 
     <!-- Logo Settings -->
-    <fieldset>
+    <fieldset class="p-3 mb-3">
       <legend>Logo Settings</legend>
 
       <label>Logo Type:</label>
@@ -113,7 +106,7 @@
     </fieldset>
 
     <!-- Navigation Links -->
-    <fieldset>
+    <fieldset class="p-3  mb-3">
       <legend>Navigation Links</legend>
       <div id="nav_links_container">
         <div class="nav-link-item">
@@ -130,7 +123,7 @@
     </fieldset>
 
     <!-- Layout & Position -->
-    <fieldset>
+    <fieldset class="p-3 mb-3">
       <legend>Navbar Layout</legend>
 
       <label>Position:</label>
@@ -145,7 +138,7 @@
     </fieldset>
 
     <!-- Colors & Styling -->
-    <fieldset>
+    <fieldset class="p-3 mb-3">
       <legend>Colors & Styling</legend>
 
       <label>Background Color:</label>
@@ -168,7 +161,7 @@
     </fieldset>
 
     <!-- Extra Features -->
-    <fieldset>
+    <fieldset class="p-3 mb-3">
       <legend>Extra Features</legend>
 
       <label><input type="checkbox" id="add_search"> Add Search Bar</label>
@@ -194,9 +187,11 @@
     </fieldset>
 
     <!-- Submit -->
-    <button type="submit">Save Navbar</button>
+    <button class="button mt-3"  type="submit">Save Navbar</button>
   </form>
+@endsection
 
+@section('script')
   <script>
     // Show/Hide Logo Options
     document.getElementById("logo_type").addEventListener("change", function() {
@@ -229,6 +224,4 @@
       container.appendChild(linkItem);
     }
   </script>
-
-</body>
-</html>
+@endsection

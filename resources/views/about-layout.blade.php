@@ -1,33 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Section Layouts</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
+@extends('main-layout')
+@section('title' , 'About section layout')
+@section('style')
+<style>
 
         /* Layout Selector Form */
         .layout-selector {
@@ -124,7 +98,7 @@
 
         .redirect-btn {
             padding: 15px 35px;
-            background: linear-gradient(135deg, #48bb78, #38a169);
+            background:     linear-gradient(135deg, #6c63ff, #764ba2);
             color: white;
             border: none;
             border-radius: 50px;
@@ -132,12 +106,12 @@
             font-weight: 700;
             font-size: 1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(72, 187, 120, 0.3);
+            box-shadow: 0 5px 15px rgba(162, 98, 168, 0.3);
         }
 
         .redirect-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(72, 187, 120, 0.4);
+            box-shadow: 0 10px 25px rgba(135, 102, 142, 0.4);
         }
 
         .redirect-btn:disabled {
@@ -358,8 +332,9 @@
             }
         }
     </style>
-</head>
-<body>
+@endsection
+
+@section('content')
     <div class="container">
         <!-- Layout Selector Form -->
         <div class="layout-selector">
@@ -502,7 +477,9 @@
             </div>
         </section>
     </div>
+@endsection
 
+@section('script')
     <script>
         let selectedLayoutValue = 1;
 
@@ -573,5 +550,5 @@
             updateSelectionInfo(1);
         });
     </script>
-</body>
-</html>
+
+@endsection

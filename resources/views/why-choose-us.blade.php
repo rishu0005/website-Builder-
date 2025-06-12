@@ -2,53 +2,9 @@
 @section('title', 'Why Choose Us')
 @section('style')
   <style>
-    :root {
-      /* Enhanced Color Palette */
-      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-      --warning-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-      --error-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-      --glass-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-      
-      /* Core Colors */
-      --primary-color: #667eea;
-      --primary-hover: #5a6fd8;
-      --primary-light: rgba(102, 126, 234, 0.1);
-      --secondary-color: #764ba2;
-      --accent-color: #f093fb;
-      
-      /* Modern Background */
-      --bg-primary: linear-gradient(135deg, #f5f8ff 0%, #e8f4fd 100%);
-      --bg-secondary: #ffffff;
-      --bg-glass: rgba(255, 255, 255, 0.25);
-      --bg-card: rgba(255, 255, 255, 0.9);
-      --text-primary: #1a202c;
-      --text-secondary: #4a5568;
-      --text-muted: #718096;
-      --border-color: #e2e8f0;
-      --border-focus: #667eea;
-      
-      /* Advanced Shadows */
-      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      --shadow-glow: 0 0 40px rgba(102, 126, 234, 0.3);
-      --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.08);
-      --shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.12);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
 
     body {
       background: var(--bg-primary);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      min-height: 100vh;
-      padding: 20px 0;
-      overflow-x: hidden;
     }
 
     /* Animated Background Elements */

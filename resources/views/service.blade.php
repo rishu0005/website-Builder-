@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Service Section Creator</title>
+@extends('main-layout')
+@section('title', 'Service section form')
+@section('style')
   <style>
     body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
+      /* font-family: Arial, sans-serif; */
+      /* padding: 20px; */
       background: #f4f4f4;
     }
     h2 {
@@ -57,9 +54,10 @@
       background: #0056b3;
     }
   </style>
-</head>
-<body>
 
+@endsection
+
+@section('content')
   <h2>Create Your Service Section</h2>
 
   <form id="serviceSectionForm">
@@ -93,11 +91,13 @@
       </div>
     </div>
 
-    <button type="button" onclick="addService()">+ Add Another Service</button>
+    <button class="button" type="button" onclick="addService()">+ Add Another Service</button>
     <br><br>
-    <button type="submit">Generate Service Section</button>
+    <button class="button" type="submit">Generate Service Section</button>
   </form>
+@endsection
 
+@section('script')
   <script>
     function addService() {
       const container = document.getElementById('servicesContainer');
@@ -120,6 +120,4 @@
       container.appendChild(serviceItem);
     }
   </script>
-
-</body>
-</html>
+@endsection

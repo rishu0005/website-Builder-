@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>FAQ Customization</title>
+@extends('main-layout')
+@section('title', 'FAQ Customization')
+@section('style')
   <style>
-    :root {
-      /* Your theme variables */
+    /* :root {
       --primary-dark: #1e293b;
       --primary-medium: #334155;
       --primary-light: #64748b;
@@ -38,14 +35,14 @@
       --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
       --radius: 12px;
-    }
+    } */
 
     body {
-      font-family: 'Segoe UI', sans-serif;
+      /* font-family: 'Segoe UI', sans-serif; */
       background: var(--bg-primary);
-      color: var(--text-primary);
-      margin: 0;
-      padding: 40px;
+      /* color: var(--text-primary); */
+      /* margin: 0; */
+      /* padding: 40px; */
     }
 
     .faq-container {
@@ -153,10 +150,10 @@
     }
 
   </style>
-</head>
-<body>
 
-  <div class="faq-container">
+@endsection
+@section('content')
+<div class="faq-container mt-5">
     <h2>Customize FAQs</h2>
 
     <button type="button" class="btn btn-primary btn-add" onclick="addFaqItem()">+ Add FAQ</button>
@@ -187,7 +184,9 @@
       <button type="submit" class="btn btn-primary btn-submit">Save FAQs</button>
     </form>
   </div>
+@endsection
 
+@section('script')
   <script>
     function addFaqItem() {
       const container = document.getElementById('faq-items');
@@ -219,6 +218,4 @@
       faqItem.remove();
     }
   </script>
-
-</body>
-</html>
+@endsection

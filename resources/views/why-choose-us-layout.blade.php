@@ -1,60 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Why Choose Us - Layout Variations</title>
-    <style>
-        :root {
-            /* Primary Colors - Deep Blue to Light Blue Gradient */
-            --primary-dark: #1e293b;
-            --primary-medium: #334155;
-            --primary-light: #64748b;
-            --primary-accent: #3b82f6;
-            --primary-hover: #2563eb;
-            
-            /* Secondary Colors - Purple to Pink Gradient */
-            --secondary-dark: #581c87;
-            --secondary-medium: #7c3aed;
-            --secondary-light: #a855f7;
-            --secondary-accent: #ec4899;
-            
-            /* Neutral Colors */
-            --bg-primary: #f8fafc;
-            --bg-secondary: #ffffff;
-            --bg-card: #ffffff;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --text-muted: #94a3b8;
-            --border-color: #e2e8f0;
-            --border-light: #f1f5f9;
-            
-            /* Success/Warning/Error Colors */
-            --success: #10b981;
-            --success-light: #d1fae5;
-            --warning: #f59e0b;
-            --warning-light: #fef3c7;
-            --error: #ef4444;
-            --error-light: #fee2e2;
-            
-            /* Shadows */
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            
-            /* Gradients */
-            --gradient-primary: linear-gradient(135deg, var(--primary-accent) 0%, var(--secondary-medium) 100%);
-            --gradient-secondary: linear-gradient(135deg, var(--secondary-medium) 0%, var(--secondary-accent) 100%);
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+@extends('main-layout')
+@section('title', 'why choose us layout')
+@section('style')
+<style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-primary);
@@ -484,10 +431,13 @@
             opacity: 0.3;
         }
     </style>
-</head>
-<body>
+
+@endsection
+
+
+@section('content')
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav d-flex justify-content-center">
         <div class="nav-container">
             <a href="#layout1" class="nav-link">Grid Cards</a>
             <a href="#layout2" class="nav-link">Horizontal</a>
@@ -691,7 +641,10 @@
         </div>
     </section>
 
-    <script>
+@endsection
+
+@section('script')
+<script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function(e) {
@@ -760,5 +713,4 @@
             statObserver.observe(card);
         });
     </script>
-</body>
-</html>
+@endsection
