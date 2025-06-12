@@ -30,7 +30,6 @@
 
 
 @section('title','Contact Us - Layout Options')
-    <title>Contact Us - Layout Options</title>
 
 @section('style')
     <style>
