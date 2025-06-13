@@ -72,7 +72,7 @@
             box-shadow: 0 35px 80px rgba(128, 91, 174, 0.3);
         }
 
-        .layout-card.selected::after {
+        /* .layout-card.selected::after {
             content: '✓';
             position: absolute;
             top: 20px;
@@ -88,7 +88,7 @@
             font-weight: bold;
             font-size: 1.2rem;
             z-index: 10;
-        }
+        } */
 
         .layout-header {
             padding: 30px;
@@ -279,10 +279,10 @@
             transform: none;
         }
 
-        .btn-primary {
+        /* .btn-primary {
             background: linear-gradient(135deg, #10b981, #059669);
             color: white;
-        }
+        } */
 
         .btn-primary:hover:not(:disabled) {
             transform: translateY(-3px);
@@ -349,7 +349,7 @@
             <!-- Layout 1: Modern Accordion -->
             <div class="layout-card" onclick="selectLayout('accordion', this)">
                 <div class="layout-header accordion-bg">
-                    <h3 class="layout-title bg-light">Interactive Accordion</h3>
+                    <h3 class="layout-title text-primary">Interactive Accordion</h3>
                     <p class="layout-subtitle" style="color: rgba(255,255,255,0.9);">Expandable sections with animations</p>
                 </div>
                 <div class="layout-preview accordion-preview">
@@ -421,10 +421,10 @@
 
         <div class="action-buttons">
             <button class="btn btn-primary" id="useLayoutBtn" disabled onclick="useSelectedLayout()">
-                ✨ Use This Layout
+                ✨Preview
             </button>
             <a href="#customize" class="btn btn-secondary" onclick="customizeLayout()">
-                🎨 Customize & Download
+                🎨 Use This Layout
             </a>
         </div>
     </div>
@@ -480,13 +480,13 @@
             // Show confirmation
             const confirmed = confirm(`Redirect to ${layoutNames[selectedLayout]} implementation?\n\nThis will take you to: ${layoutUrls[selectedLayout]}`);
             
-            if (confirmed) {
-                // In a real scenario, you would redirect:
-                // window.location.href = layoutUrls[selectedLayout];
+            // if (confirmed) {
+            //     // In a real scenario, you would redirect:
+            //     // window.location.href = layoutUrls[selectedLayout];
                 
-                // For demo purposes, show an alert
-                alert(`Redirecting to ${layoutNames[selectedLayout]} page...\n\nURL: ${layoutUrls[selectedLayout]}\n\n(In a real implementation, this would navigate to the actual page)`);
-            }
+            //     // For demo purposes, show an alert
+            //     alert(`Redirecting to ${layoutNames[selectedLayout]} page...\n\nURL: ${layoutUrls[selectedLayout]}\n\n(In a real implementation, this would navigate to the actual page)`);
+            // }
         }
 
         function customizeLayout() {

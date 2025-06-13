@@ -156,6 +156,7 @@
 
     .form-field {
       margin-bottom: 1.5rem;
+      /* max-width: 36rem ; */
     }
 
     .form-field:last-child {
@@ -193,7 +194,7 @@
       outline: none;
       border-color: var(--border-focus);
       background: var(--bg-secondary);
-      box-shadow: var(--shadow-lg), 0 0 0 4px var(--primary-light);
+      /* box-shadow: var(--shadow-lg), 0 0 0 4px var(--primary-light); */
       transform: translateY(-1px);
     }
 
@@ -396,6 +397,7 @@
       transition: all 0.3s ease;
       font-weight: 600;
       font-size: 0.9rem;
+      width:90%;
     }
 
     .bg-option.active {
@@ -436,23 +438,27 @@
               <label for="hero_subtitle">Subtitle (Optional)</label>
               <input type="text" id="hero_subtitle" placeholder="Compelling subtitle that converts visitors">
             </div>
+            <div class="form-field">
+              <label for="hero_subtitle">Description</label>
+              <input type="text" id="hero_subtitle" placeholder="Description that tells about you">
+            </div>
           </div>
 
           <!-- Background Settings -->
           <div class="field-group">
             <h3>Background & Style</h3>
             
-            <div class="form-field">
+            <div class="form-field" >
               <label>Background Type</label>
-              <div class="background-toggle">
+              <div class="background-toggle justify-content-between">
                 <div class="bg-option active" data-type="color">Solid Color</div>
-                <div class="bg-option" data-type="image">Image</div>
+                <div class="bg-option shadow-sm border" data-type="image">Image</div>
               </div>
             </div>
 
             <div id="bg_color_group">
               <div class="form-field">
-                <div class="color-input-group">
+                <div class="color-input-group mb-3" style="max-width:33.6rem;">
                   <label>Background Color</label>
                   <input type="color" id="hero_bg_color" value="#667eea">
                 </div>
@@ -479,9 +485,9 @@
                 </div>
               </div>
 
-              <div class="form-field">
+              <div class="form-field ">
                 <label for="hero_height">Height (px)</label>
-                <input type="number" id="hero_height" value="600" min="300" max="1000">
+                <input type="number" id="hero_height" class="shadow-sm border" value="600" min="300" max="1000">
               </div>
             </div>
           </div>
@@ -531,11 +537,11 @@
         </div>
 
         <button type="submit" class="submit-btn">
-          ✨ Generate Hero Section
+          ✨ Save Hero Section
         </button>
 
         <div class="preview-hint">
-          💡 Your hero section will be generated with modern animations and responsive design
+         <p class="text-muted">💡 Your hero section will be Save with modern animations and responsive design</p> 
         </div>
       </form>
     </div>
@@ -599,12 +605,12 @@
       // Create loading state
       const btn = document.querySelector('.submit-btn');
       const originalText = btn.innerHTML;
-      btn.innerHTML = '⚡ Generating...';
+      btn.innerHTML = '⚡ Saving...';
       btn.disabled = true;
       
       // Simulate processing
       setTimeout(() => {
-        btn.innerHTML = '✅ Hero Section Created!';
+        btn.innerHTML = '✅ Hero Section Saved!';
         setTimeout(() => {
           btn.innerHTML = originalText;
           btn.disabled = false;

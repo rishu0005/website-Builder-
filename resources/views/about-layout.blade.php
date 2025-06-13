@@ -157,7 +157,7 @@
 
         .image-box {
             flex: 1;
-            height: 300px;
+            height: 400px;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -331,11 +331,14 @@
                 transform: translateY(0);
             }
         }
+        .top-border{
+            border-top: 1px solid #e9ecef;
+        }
     </style>
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container p-0">
         <!-- Layout Selector Form -->
         <div class="layout-selector">
             <form class="selector-form" id="layoutForm">
@@ -351,22 +354,17 @@
                         <input type="radio" id="layout2" name="layout" value="2" class="layout-radio" onchange="switchLayout(2)">
                         <label for="layout2" class="layout-btn">Images Right</label>
                     </div>
-                    <div class="layout-option">
+                    {{-- <div class="layout-option">
                         <input type="radio" id="layout3" name="layout" value="3" class="layout-radio" onchange="switchLayout(3)">
                         <label for="layout3" class="layout-btn">Image Center</label>
-                    </div>
+                    </div> --}}
                 </div>
 
-                <div class="selection-info" id="selectionInfo">
+                {{-- <div class="selection-info" id="selectionInfo">
                     <strong>Selected:</strong> <span id="selectedLayout">Images Left Layout</span> - Perfect for showcasing your team while maintaining focus on your story.
-                </div>
+                </div> --}}
 
-                <div class="form-actions">
-                    <button type="button" class="preview-btn" onclick="previewLayout()">Preview Changes</button>
-                    <a href="{{ route('about' ) }}" style="text-decoration: none" type="button" class="redirect-btn" id="proceedBtn">
-                        Use This Layout →
-                    </a>
-                </div>
+       
             </form>
         </div>
 
@@ -375,9 +373,9 @@
             <!-- Layout 1: Images Left -->
             <div class="about-container layout-1 active" id="layout-1">
                 <div class="images-container">
-                    <div class="image-box">
+                    {{-- <div class="image-box">
                         <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop" alt="Team collaboration">
-                    </div>
+                    </div> --}}
                     <div class="image-box">
                         <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop" alt="Modern office">
                     </div>
@@ -409,9 +407,9 @@
             <!-- Layout 2: Images Right -->
             <div class="about-container layout-2" id="layout-2">
                 <div class="images-container">
-                    <div class="image-box">
+                    {{-- <div class="image-box">
                         <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop" alt="Team collaboration">
-                    </div>
+                    </div> --}}
                     <div class="image-box">
                         <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop" alt="Modern office">
                     </div>
@@ -441,7 +439,7 @@
             </div>
 
             <!-- Layout 3: Image Center -->
-            <div class="about-container layout-3" id="layout-3">
+            {{-- <div class="about-container layout-3" id="layout-3">
                 <div class="content-container">
                     <h2 class="heading">Innovating Tomorrow</h2>
                     <h3 class="subheading">Leading Digital Transformation</h3>
@@ -474,8 +472,17 @@
                     </div>
                     <a href="#" class="cta-button">Learn More About Us</a>
                 </div>
-            </div>
+            </div> --}}
         </section>
+
+        <div class="layout-selector top-border">
+                     <div class="form-actions">
+                    <button type="button" class="preview-btn" onclick="previewLayout()">Preview Changes</button>
+                    <a href="{{ route('about' ) }}" style="text-decoration: none" type="button" class="redirect-btn" id="proceedBtn">
+                        Use This Layout →
+                    </a>
+                </div>
+        </div>
     </div>
 @endsection
 

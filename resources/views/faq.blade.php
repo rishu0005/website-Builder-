@@ -108,7 +108,7 @@
       min-height: 100px;
     }
 
-    .btn {
+    /* .btn {
       padding: 12px 20px;
       border: none;
       border-radius: var(--radius);
@@ -120,7 +120,7 @@
     .btn-primary {
       background: var(--primary-accent);
       color: #fff;
-    }
+    } */
 
     .btn-primary:hover {
       background: var(--primary-hover);
@@ -162,18 +162,18 @@
       <div id="faq-items">
         <!-- Default FAQ Item -->
         <div class="faq-item">
-          <button type="button" class="btn btn-remove" onclick="removeFaqItem(this)">Remove</button>
+          <button type="button" class="btn float-right  mb-2 btn-danger " onclick="removeFaqItem(this)">Remove</button>
           <div class="form-group">
             <label>Question</label>
             <input type="text" name="question[]" placeholder="Enter FAQ question" required>
           </div>
           <div class="form-group">
             <label>Answer</label>
-            <textarea name="answer[]" placeholder="Enter FAQ answer" required></textarea>
+            <textarea name="answer[]" class="p-3" placeholder="Enter FAQ answer" required></textarea>
           </div>
           <div class="form-group">
             <label>Status</label>
-            <select name="status[]">
+            <select name="status[]" class="p-2">
               <option value="active" selected>Active</option>
               <option value="inactive">Inactive</option>
             </select>
@@ -181,7 +181,7 @@
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary btn-submit">Save FAQs</button>
+      <button type="submit" class="button w-100">Save FAQs</button>
     </form>
   </div>
 @endsection

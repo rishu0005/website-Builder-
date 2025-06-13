@@ -503,7 +503,7 @@
             if (selectedCard) {
                 const layoutId = selectedCard.dataset.layout;
                 const layout = layouts[layoutId];
-                alert(`Great choice! You've selected the ${layout.name}. This layout will now be implemented for your hero section.`);
+                // alert(`Great choice! You've selected the ${layout.name}. This layout will now be implemented for your hero section.`);
                 
                 // Here you would typically send the layout choice to your backend
                 // or trigger the next step in your application flow

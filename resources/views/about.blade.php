@@ -152,9 +152,9 @@
 
     .form-control:focus {
       outline: none;
-      border-color: var(--border-focus);
+      /* border-color: var(--border-focus); */
       background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 0 0 4px var(--primary-light);
+      box-shadow: none !important;
       transform: translateY(-2px);
     }
 
@@ -376,9 +376,9 @@
       <p>Create your perfect about section with live preview</p>
     </div>
 
-    <div class="row g-4">
+    <div class="row g-4 justify-content-center">
       <!-- Form Column -->
-      <div class="col-lg-6">
+      <div class="col-lg-8">
         <div class="glass-card">
           <div class="form-container">
             <h3 class="mb-4" style="color: var(--text-primary); font-weight: 600;">
@@ -421,7 +421,7 @@
                 <input type="text" class="form-control" name="button" placeholder="Contact Me">
               </div>
 
-              <button type="submit" class="btn-gradient w-100">
+              <button type="button" class="btn-gradient w-100">
                 <i class="fas fa-magic me-2"></i>Update Preview
               </button>
             </form>
@@ -430,7 +430,7 @@
       </div>
 
       <!-- Preview Column -->
-      <div class="col-lg-6">
+      {{-- <div class="col-lg-6">
         <div class="preview-container">
           <div class="glass-card">
             <div class="about-preview">
@@ -446,7 +446,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
     </div>
   </div>
 

@@ -164,7 +164,7 @@
     <fieldset class="p-3 mb-3">
       <legend>Extra Features</legend>
 
-      <label><input type="checkbox" id="add_search"> Add Search Bar</label>
+      {{-- <label><input type="checkbox" id="add_search"> Add Search Bar</label> --}}
 
       <label><input type="checkbox" id="add_cta" onchange="toggleCTA()"> Add Call-to-Action Button</label>
 

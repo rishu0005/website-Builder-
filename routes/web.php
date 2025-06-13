@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/login',function(){ return view('login') ; })->name('login');
+Route::get('/register', function() { return view('register'); }  )->name('register');
+
 Route::get('/', function () {  return view('dashboard');})->name('dashboard');  
 Route::get('/dashboard', function () {  return view('dashboard');})->name('dashboard');  
 Route::get('/new-project', function () { return view('project.project');})->name('new-site');
@@ -23,7 +26,7 @@ Route::get('/about', function () {  return view('about');})->name('about');
 
 Route::get('/footer-layout', function () {  return view('footer-layout');})->name('footer-layout');
 Route::get('/footer', function () {  return view('footer');})->name('footer');
-
+    
 Route::get( '/why-choose-us-layout', function() { return view('why-choose-us-layout');})->name('why-choose-us-layout'); 
 Route::get( '/why-choose-us', function() { return view('why-choose-us');})->name('why-choose-us'); 
 
@@ -36,3 +39,6 @@ Route::get('/faq', function () {  return view('faq');})->name('faq');
 
 Route::get('/contact-layout', function () {  return view('contact-layout');})->name('contact-layout');
 Route::get('/contact', function () {  return view('contact');})->name('contact');
+
+Route::get('/gallery-layout', function(){ return view('gallery-layout') ;})->name('gallery-layout');
+Route::get('/gallery', function(){ return view('gallery') ;})->name('gallery');

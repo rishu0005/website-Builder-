@@ -93,7 +93,7 @@
 
     <button class="button" type="button" onclick="addService()">+ Add Another Service</button>
     <br><br>
-    <button class="button" type="submit">Generate Service Section</button>
+    <button class="button" type="button">Save Service Section</button>
   </form>
 @endsection
 

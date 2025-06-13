@@ -357,9 +357,10 @@
         }
 
         .social-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 1rem;
+            max-width:633px;
         }
 
         .social-link-item {
@@ -483,40 +484,23 @@
             .header h1 { font-size: 2.5rem; }
             .layout-grid { grid-template-columns: 1fr; }
             .color-input-group { flex-direction: column; align-items: stretch; }
-            .social-links { grid-template-columns: 1fr; }
+            /* .social-links { grid-template-columns: 1fr; } */
         }
 </style>
 
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container ">
         <div class="header">
             <h1>Customize Your Footer</h1>
             <p>Design a professional footer for your website. Choose layout, add content sections, social links, and customize the appearance.</p>
         </div>
-
-        <div class="main-content">
+        
+        <div class="main-content d-flex justify-content-center">
             <!-- Customization Panel -->
-            <div class="customization-panel">
-                <!-- Layout Selection -->
-                <div class="section-card">
-                    <h3 class="section-title">Choose Layout</h3>
-                    <div class="layout-grid">
-                        <div class="layout-option layout-single selected" data-layout="single">
-                            <div class="layout-preview"></div>
-                            <div class="layout-name">Single Column</div>
-                        </div>
-                        <div class="layout-option layout-columns" data-layout="columns">
-                            <div class="layout-preview"></div>
-                            <div class="layout-name">Multiple Columns</div>
-                        </div>
-                        <div class="layout-option layout-wide" data-layout="wide">
-                            <div class="layout-preview"></div>
-                            <div class="layout-name">Wide Layout</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="customization-panel ">
+                
 
                 <!-- Company Information -->
                 <div class="section-card">
@@ -652,7 +636,7 @@ Consulting|/consulting</textarea>
                     </div>
 
                     <div class="checkbox-group">
-                        <div class="custom-checkbox checked" id="centerContent" onclick="toggleCheckbox(this)"></div>
+                        <div class="custom-checkbox " id="centerContent" onclick="toggleCheckbox(this)"></div>
                         <label>Center Content</label>
                     </div>
 
@@ -660,11 +644,16 @@ Consulting|/consulting</textarea>
                         <div class="custom-checkbox" id="gradientBg" onclick="toggleCheckbox(this)"></div>
                         <label>Gradient Background</label>
                     </div>
+
+                      <button class="generate-btn" onclick="generateFooter()">
+                        <i class="fas fa-code me-2"></i>
+                        Save Footer Section
+                    </button>
                 </div>
             </div>
 
             <!-- Preview Panel -->
-            <div class="preview-container">
+            {{-- <div class="preview-container">
                 <div class="section-card">
                     <h3 class="section-title">Live Preview</h3>
                     <div class="footer-preview">
@@ -673,12 +662,10 @@ Consulting|/consulting</textarea>
                         </div>
                     </div>
                     
-                    <button class="generate-btn" onclick="generateFooter()">
-                        <i class="fas fa-code me-2"></i>
-                        Generate Footer Code
-                    </button>
+                 
                 </div>
-            </div>
+            </div> --}}
+             
         </div>
     </div>
 

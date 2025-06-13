@@ -459,6 +459,10 @@ body {
                 transform: translateY(0);
             }
         }
+
+        .top-border{
+            border-top: 2px solid var(--border-color);
+        }
     </style>
 
 @endsection
@@ -486,16 +490,11 @@ body {
                     </div>
                 </div>
 
-                <div class="selection-info" id="selectionInfo">
+                {{-- <div class="selection-info" id="selectionInfo">
                     <strong>Selected:</strong> <span id="selectedFooter">Classic Four Column Layout</span> - Traditional footer with comprehensive navigation and branding.
-                </div>
+                </div> --}}
 
-                <div class="form-actions">
-                    <button type="button" class="preview-btn" onclick="previewFooter()">Preview Changes</button>
-                    <button type="button" class="button" id="proceedBtn" onclick="proceedWithFooter()">
-                        Use This Footer →
-                    </button>
-                </div>
+          
             </form>
         </div>
 
@@ -637,6 +636,15 @@ body {
                     </div>
                 </div>
             </footer>
+        </div>
+
+        <div class="layout-selector top-border">
+                  <div class="form-actions">
+                    <button type="button" class="preview-btn" onclick="previewFooter()">Preview Changes</button>
+                    <button type="button" class="button" id="proceedBtn" onclick="proceedWithFooter()">
+                        Use This Footer →
+                    </button>
+                </div>
         </div>
     </div>
 @endsection

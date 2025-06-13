@@ -483,12 +483,12 @@
         <div class="layout-selector">
             <button class="layout-btn active" onclick="showLayout(1)">Modern Cards</button>
             <button class="layout-btn" onclick="showLayout(2)">Split Hero</button>
-            <button class="layout-btn" onclick="showLayout(3)">Minimalist</button>
+            {{-- <button class="layout-btn" onclick="showLayout(3)">Minimalist</button> --}}
         </div>
 
         <!-- Layout 1: Modern Card Style -->
         <div id="layout-1" class="layout-container active">
-            <div class="layout-1">
+            <div class="layout-1 d-flex justify-content-center">
                 <div class="contact-info">
                     <h2>Let's Connect</h2>
                     <p>We'd love to hear from you. Choose your preferred way to get in touch and we'll respond as quickly as possible.</p>
@@ -518,13 +518,13 @@
                     </div>
                 </div>
 
-                <div class="cta-section">
+                {{-- <div class="cta-section">
                     <div class="cta-card">
                         <h3>Ready to Start?</h3>
                         <p>Fill out our contact form and we'll get back to you within 24 hours with a personalized response.</p>
                         <a href="#contact-form" class="cta-button">Open Contact Form</a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
 
@@ -550,42 +550,36 @@
                                 <span class="stat-label">Satisfaction</span>
                             </div>
                         </div>
+                        
                     </div>
 
-                    <div class="hero-form">
+                    {{-- <div class="hero-form">
                         <h3>Get Started Today</h3>
                         <p>Ready to take the next step? Our contact form is designed to capture all the details we need to provide you with the best possible service.</p>
                         <button class="form-button" onclick="redirectToForm()">Launch Contact Form</button>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
 
         <!-- Layout 3: Minimalist Center -->
-        <div id="layout-3" class="layout-container">
+        {{-- <div id="layout-3" class="layout-container">
             <div class="layout-3">
                 <div class="minimal-card">
                     <h2>Contact Us</h2>
                     <p>Simple, direct, and effective. Choose how you'd like to connect with our team.</p>
                     
-                    <div class="contact-grid">
-                        <div class="contact-method">
-                            <div class="method-icon">✉️</div>
-                            <div class="method-text">Email Support</div>
-                        </div>
-                        <div class="contact-method">
-                            <div class="method-icon">💬</div>
-                            <div class="method-text">Live Chat</div>
-                        </div>
-                        <div class="contact-method">
-                            <div class="method-icon">📞</div>
-                            <div class="method-text">Phone Call</div>
-                        </div>
-                    </div>
+               
                     
                     <a href="#contact-form" class="cta-button">Contact Form</a>
                 </div>
             </div>
+        </div> --}}
+
+  
+        <div class="layout-selector">
+          <button type="submit" class="button mt-4 w-50">Use This Layout </button>
+
         </div>
     </div>
 @endsection
