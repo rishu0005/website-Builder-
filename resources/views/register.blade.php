@@ -469,7 +469,7 @@
             e.preventDefault();
             
             const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
+            const data = Object.fromEntr    ies(formData.entries());
             
             if (data.password !== data.confirmPassword) {
                 alert('Passwords do not match!');

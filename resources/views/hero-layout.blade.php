@@ -328,6 +328,26 @@
 @section('content')
 
     <div class="container">
+          <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/">
+              Pages
+            </a>
+          </li>
+          <li class="breadcrumb-separator"><i class="fa-solid fa-arrow-right-long"></i></li>
+          <li class="breadcrumb-item">
+            <a href="/builder">Home Page </a>
+          </li>
+          <li class="breadcrumb-separator"><i class="fa-solid fa-arrow-right-long"></i></li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Hero Layout Section 
+          </li>
+        </ol>
+      </nav>
+    </div>
         <div class="header">
             <h1>Choose Your Hero Layout</h1>
             <p>Select the perfect layout structure for your hero section. Preview how your content will be arranged before making your choice.</p>

@@ -11,8 +11,7 @@
             --text-light: #718096;
             --border-color: #e2e8f0;
             --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
-            --glow: 0 0 30px rgba(102, 126, 234, 0.3);
+      
         }
 
 
@@ -451,16 +450,16 @@
         <div class="filter-section">
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">
-                    <span><i class="fas fa-th"></i> All Sections</span>
+                    <span><i class="fas fa-th"></i> Home</span>
                 </button>
                 <button class="filter-btn" data-filter="essential">
-                    <span><i class="fas fa-star"></i> Essential</span>
+                    <span><i class="fas fa-star"></i> About</span>
                 </button>
                 <button class="filter-btn" data-filter="content">
-                    <span><i class="fas fa-file-alt"></i> Content</span>
+                    <span><i class="fas fa-file-alt"></i> Contact</span>
                 </button>
                 <button class="filter-btn" data-filter="business">
-                    <span><i class="fas fa-briefcase"></i> Business</span>
+                    <span><i class="fas fa-briefcase"></i> Services</span>
                 </button>
                 <button class="filter-btn" data-filter="interactive">
                     <span><i class="fas fa-mouse-pointer"></i> Interactive</span>
