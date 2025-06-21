@@ -708,7 +708,29 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="container">
+        <div class="container py-0">
+               <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/">
+              Pages
+            </a>
+          </li>
+          <li class="breadcrumb-separator"><i class="fa-solid fa-arrow-right-long"></i></li>
+          <li class="breadcrumb-item">
+            <a href="/builder">Home Page </a>
+          </li>
+          <li class="breadcrumb-separator"><i class="fa-solid fa-arrow-right-long"></i></li>
+          <li class="breadcrumb-item active badge-primary" aria-current="page">
+            Nav Section 
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+            
             <div class="page-title">
                 <h1>Choose Your Website Approach</h1>
                 <p>Would you like to start with a pre-designed template or build a custom website from scratch?</p>

@@ -431,7 +431,29 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container p-0 my-0">
+
+           <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/">
+              Pages
+            </a>
+          </li>
+          <li class="breadcrumb-separator"><i class="fa-solid fa-arrow-right-long"></i></li>
+          <li class="breadcrumb-item">
+            <a href="/builder">Home Page </a>
+          </li>
+          <li class="breadcrumb-separator"><i class="fa-solid fa-arrow-right-long"></i></li>
+          <li class="breadcrumb-item active badge-primary" aria-current="page">
+            Hero Section 
+          </li>
+        </ol>
+      </nav>
+    </div>
+
         <div class="form-container">
             <div class="form-header">
                 <h1>Navbar Customizer</h1>

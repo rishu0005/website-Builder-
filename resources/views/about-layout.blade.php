@@ -338,7 +338,29 @@
 @endsection
 
 @section('content')
-    <div class="container p-0">
+    <div class="container p-0 ">
+
+                       <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-container mb-0">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/">
+              Pages
+            </a>
+          </li>
+          <li class="breadcrumb-separator"><i class="fa-solid fa-arrow-right-long"></i></li>
+          <li class="breadcrumb-item">
+            <a href="/builder">Home Page </a>
+          </li>
+          <li class="breadcrumb-separator"><i class="fa-solid fa-arrow-right-long"></i></li>
+          <li class="breadcrumb-item active badge-primary" aria-current="page">
+            Nav Section 
+          </li>
+        </ol>
+      </nav>
+    </div>
+
         <!-- Layout Selector Form -->
         <div class="layout-selector">
             <form class="selector-form" id="layoutForm">

@@ -61,8 +61,8 @@
 
         .container {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+            /* margin: 0 auto;         */ 
+              padding:0 ; 
         }
 
         .header {
@@ -326,10 +326,7 @@
 @endsection
 
 @section('content')
-
-    <div class="container">
-          <!-- Breadcrumb Navigation -->
-    <div class="breadcrumb-container">
+<div class="breadcrumb-container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
@@ -348,14 +345,17 @@
         </ol>
       </nav>
     </div>
+    <div class="container p-4">
+          <!-- Breadcrumb Navigation -->
+    
         <div class="header">
             <h1>Choose Your Hero Layout</h1>
             <p>Select the perfect layout structure for your hero section. Preview how your content will be arranged before making your choice.</p>
         </div>
 
-        <div class="layout-selector">
+        <div class="layout-selector p-3">
             <!-- Layout 1: Right Image, Left Content -->
-            <div class="layout-card" data-layout="1">
+            <div class="layout-card p-3" data-layout="1">
                 <div class="layout-preview layout-1">
                     <div class="preview-content">
                         <div class="content-area">
@@ -380,7 +380,7 @@
             </div>
 
             <!-- Layout 2: Left Image, Center Content, Right Background -->
-            <div class="layout-card" data-layout="2">
+            <div class="layout-card p-3" data-layout="2">
                 <div class="layout-preview layout-2">
                     <div class="preview-content">
                         {{-- <div class="left-image"></div> --}}
@@ -429,7 +429,7 @@
             </div>
         </div>
 
-        <div class="selected-layout" id="selectedLayout" style="display: none;">
+        <div class="selected-layout p-3" id="selectedLayout" style="display: none;">
             <h3>Selected Layout: <span id="layoutName"></span></h3>
             <p id="layoutDetails"></p>
             <div class="implementation-preview" id="implementationPreview"></div>
